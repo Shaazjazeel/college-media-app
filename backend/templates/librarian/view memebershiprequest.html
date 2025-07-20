@@ -1,0 +1,82 @@
+{% extends 'librarian/new_index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+  <style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+    }
+    table {
+        width: 100%;
+        margin: 30px auto;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    th, td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #4b6584; /* A modern deep navy blue */
+        color: #f7f9fc; /* Light color for contrast */
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    td {
+        background-color: #d1d8e0; /* A soft, light grayish blue for a subtle tone */
+        color: #333; /* Darker text for readability */
+    }
+    tr:hover td {
+        background-color: #b2bec3; /* Slightly darker gray for hover effect */
+    }
+</style>
+
+</head>
+
+<body>
+{#<h1 style="text-align: center;color: black">VIEW BOOK</h1>#}
+
+<form id="form1" name="form1" method="post" action="">
+  <table >
+    <tr>
+      <th width="71"><div align="center">SL_NO</div></th>
+      <th width="141"><div align="center">DATE</div></th>
+      <th width="122"><div align="center">NAME</div></th>
+        <th width="122"><div align="center"></div></th>
+      <th width="126"><div align="center"> REGISTER_NO</div></th>
+
+      <th width="115"><div align="center">DEPARTMENT</div></th>
+      <th width="116">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.req_date }}</td>
+      <td>&nbsp;{{ i.STUDENT.name }}</td> <td><img src="{{ i.STUDENT.image }}" width="100" height="100"></td>
+      <td>&nbsp;{{ i.STUDENT.registerno }}</td>
+
+      <td>&nbsp;{{ i.STUDENT.department }}</td>
+      <td><div align="center">
+        <p><a href="/approve_membershiprequest/{{ i.id }}#aaa" class="btn btn-success" style="width: 80%;">APPROVE</a></p>
+        <p><a href="/reject_membershiprequest/{{ i.id }}#aaa" class="btn btn-danger" style="width: 80%;">REJECT</a></p>
+      </div></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>
+{% endblock %}

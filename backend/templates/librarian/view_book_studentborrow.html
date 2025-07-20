@@ -1,0 +1,77 @@
+{% extends 'librarian/new_index.html' %}
+{% block body %}
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+    <style>
+        .table-hover th{
+            background-color: #415a77;
+            color: white;
+        }
+         body {
+        background-color: #f7f9fc;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+    }
+    table {
+        width: 100%;
+        margin: 30px auto;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    th, td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #4b6584; /* A modern deep navy blue */
+        color: #f7f9fc; /* Light color for contrast */
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    td {
+        background-color: #d1d8e0; /* A soft, light grayish blue for a subtle tone */
+        color: #333;
+    }/* Darker text for readability */
+    </style>
+</head>
+
+<body>
+
+
+<table width="548" height="227" border="1" class="table table-hover">
+  <tr>
+    <th width="26" height="87" scope="row">S.NO</th>
+
+    <th width="26">NAME</th>
+    <th width="26">AUTHOR</th>
+    <th width="26">IMAGE</th>
+    <th width="26">TOTAL PAGE </th>
+      <th width="26">PRICE</th>
+      <th width="26"></th>
+
+  </tr>
+ {% for i in data %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ i.name }}</td>
+    <td>{{ i.author }}</td>
+    <td><img src="{{ i.image }}" height="100" width="100"></td>
+    <td>{{ i.totalpage }}</td>
+    <td>{{ i.price }}</td>
+   <td><div align="center">
+        <p><a href="/update_borrow/{{ i.id }}/{{ stid }}#aaa" class="btn btn-success" style="width: 80%;">UPDATE BORROW</a></p>
+
+      </div></td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

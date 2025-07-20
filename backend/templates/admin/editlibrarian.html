@@ -1,0 +1,130 @@
+{% extends 'admin/new_index.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Untitled Document</title>
+    <style>
+        body {
+            background-color: #f7f9fc;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .form-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+        }
+        .form-group input[type="file"] {
+            padding: 6px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #415a77;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            width: 40%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #415a77;
+        }
+        .form-group .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .form-group .radio-group label {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/editlibrarian_post/{{ view.id }}" method="post" enctype="multipart/form-data">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="name">NAME</label>
+                <input type="text" name="textfield" id="name" value="{{ view.name }}" />
+            </div>
+
+            <div class="form-group">
+                <label for="age">AGE</label>
+                <input type="text" name="textfield2" id="age" value="{{ view.age }}" />
+            </div>
+
+            <div class="form-group">
+                <label>GENDER</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="RadioGroup1" value="male" {% if view.gender == 'male' %} checked {% endif %} /> MALE
+                    </label>
+                    <label>
+                        <input type="radio" name="RadioGroup1" value="female" {% if view.gender == 'female' %} checked{% endif %} /> FEMALE
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="place">PLACE</label>
+                <input type="text" name="textfield3" id="place" value="{{ view.place }}" />
+            </div>
+
+            <div class="form-group">
+                <label for="post">POST</label>
+                <input type="text" name="textfield4" id="post" value="{{ view.post }}" />
+            </div>
+
+            <div class="form-group">
+                <label for="pin">PIN</label>
+                <input type="text" name="textfield5" id="pin" value="{{ view.pin }}" />
+            </div>
+         <div class="form-group">
+            <label for="email">PHOTO</label>
+             <img src="{{ view.image }}" height="100" width="100">
+            <input type="file" name="filefield" id="email" required />
+        </div>
+
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="text" name="textfield6" id="email" value="{{ view.email }}" readonly />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">PHONE NUMBER</label>
+                <input type="text" name="textfield7" id="phone" value="{{ view.phone }}" />
+            </div>
+
+            <div class="form-group">
+                <div align="center">
+                    <input type="submit" name="Submit" value="EDIT" />
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+{% endblock %}

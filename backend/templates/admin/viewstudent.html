@@ -1,0 +1,54 @@
+{% extends 'admin/new_index.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+    <style>
+        .table-hover th {
+            background-color: #415a77;
+            color: white;
+        }
+        .btn {
+            width: 100px; /* Set uniform width */
+            text-align: center; /* Center the text */
+            display: inline-block; /* Ensure buttons stay inline */
+            padding: 10px; /* Consistent padding */
+            margin: 5px 0; /* Add space between buttons */
+        }
+    </style>
+</head>
+<body>
+<table class="table table-hover" border="1">
+    <tr>
+        <th>Sno</th>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>GENDER</th>
+        <th>PLACE</th>
+        <th>REGISTER NO</th>
+        <th>IMAGE</th>
+        <th>DEPARTMENT</th>
+        <th>ACTION</th>
+    </tr>
+    {% for i in view %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.age }}</td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.place }}</td>
+        <td>{{ i.registerno }}</td>
+        <td><img src="{{ i.image }}" height="100" width="100"></td>
+        <td>{{ i.department }}</td>
+        <td>
+            <a href="/adminapprovestudent/{{ i.LOGIN.id }}" class="btn btn-success">APPROVE</a>
+            <a href="/adminrejectstudent/{{ i.LOGIN.id }}" class="btn btn-danger">REJECT</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

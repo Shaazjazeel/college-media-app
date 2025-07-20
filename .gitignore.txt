@@ -1,0 +1,19 @@
+# Python (Django)
+*.pyc
+__pycache__/
+env/
+venv/
+*.db
+*.sqlite3
+backend/.env
+
+# Android
+android-client/.gradle/
+android-client/.idea/
+android-client/build/
+android-client/local.properties
+android-client/.DS_Store
+
+# OS/editor
+.DS_Store
+.vscode/

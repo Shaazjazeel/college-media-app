@@ -1,0 +1,88 @@
+{% extends 'admin/new_index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style>
+        .table-hover th{
+            background-color: #415a77;
+            color: white;
+        }
+
+        /* Modern Button Styling */
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin: 5px;
+            width: 100px;  /* Set fixed width for both buttons */
+            text-align: center; /* Center text inside the buttons */
+        }
+
+        .btn-edit {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-edit:hover {
+            background-color: #45a049;
+            color: white;
+        }
+
+        .btn-delete {
+            background-color: #f44336;
+            color: white;
+            border: 1px solid #f44336;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-delete:hover {
+            background-color: #e53935;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<table width="668" height="239" border="1" class="table table-hover">
+  <tr>
+    <th scope="row">SNO</th>
+    <th>NAME</th>
+    <th>IMAGE</th>
+    <th>AGE</th>
+    <th>GENDER</th>
+    <th>PLACE</th>
+    <th>POST</th>
+    <th>PIN</th>
+    <th>EMAIL</th>
+    <th>PHONE</th>
+    <th>&nbsp;</th>
+  </tr>
+    {% for i in view %}
+  <tr>
+    <td scope="row">{{ forloop.counter }}</td>
+    <td>{{ i.name }}&nbsp;</td>
+    <td><img src="{{ i.image }}" height="100" width="100"> </td>
+    <td>{{ i.age }}&nbsp;</td>
+    <td>{{ i.gender }}&nbsp;</td>
+    <td>{{ i.place }}&nbsp;</td>
+    <td>{{ i.post }}&nbsp;</td>
+    <td>{{ i.pin }}&nbsp;</td>
+    <td>{{ i.email }}&nbsp;</td>
+    <td>{{ i.phone }}&nbsp;</td>
+    <td>
+        <p><a href="/editlibrarian/{{ i.id }}" class="btn btn-edit">Edit</a></p>
+        <p><a href="/delete/{{ i.LOGIN.id }}" class="btn btn-delete" onclick="return confirm('Are You sure ?')">Delete</a></p>
+    </td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

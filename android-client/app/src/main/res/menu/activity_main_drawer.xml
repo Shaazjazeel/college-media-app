@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/homee"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/prof"
+            android:icon="@drawable/profile"
+            android:title="PROFILE" />
+        <item
+            android:id="@+id/postt"
+            android:icon="@drawable/post"
+            android:title="POST" />  <item
+            android:id="@+id/comm"
+            android:icon="@drawable/communityyy"
+            android:title="COMMUNITY" />
+        <item
+            android:id="@+id/librr"
+            android:icon="@drawable/libbb"
+            android:title="LIBRARY" />
+        <item
+            android:id="@+id/membr"
+            android:icon="@drawable/membercard"
+            android:title="MEMBERSHIP" />
+        <item
+            android:id="@+id/broow"
+            android:icon="@drawable/borrowalll"
+            android:title="BORROWAL" />
+        <item
+            android:id="@+id/hist"
+            android:icon="@drawable/history"
+            android:title="HISTORY" />
+        <item
+            android:id="@+id/stud"
+            android:icon="@drawable/student"
+            android:title="STUDENTS" />
+        <item
+            android:id="@+id/othstd"
+            android:icon="@drawable/postttes"
+            android:title="STUDENTS POST" />
+        <item
+            android:id="@+id/requesttt"
+            android:icon="@drawable/request"
+            android:title="REQUEST" />
+        <item
+            android:id="@+id/finnee"
+            android:icon="@drawable/fine"
+            android:title="FINE" /><item
+            android:id="@+id/following"
+            android:icon="@drawable/follow"
+            android:title="FOLLOWING" /><item
+            android:id="@+id/followerss"
+            android:icon="@drawable/follower"
+            android:title="FOLLOWERS" />
+        <item
+            android:id="@+id/feeedd"
+            android:icon="@drawable/feedback"
+            android:title="FEEDBACK" />
+        <item
+            android:id="@+id/chng"
+            android:icon="@drawable/reset_password"
+            android:title="CHANAGE PASSWORD" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout"
+            android:title="LOGOUT" />
+    </group>
+</menu>

@@ -1,0 +1,49 @@
+{% extends 'admin/new_index.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post Management</title>
+    <style>
+        .table-hover th{
+            background-color: #415a77;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<table class="table table-hover">
+  <tr>
+    <th scope="col">Sno</th>
+    <th scope="col">POST</th>
+    <th scope="col">Student Info</th>
+    <th scope="col">Status</th>
+    <th scope="col">Actions</th>
+  </tr>
+    {% for i in view %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td><img src="{{ i.post }}" height="100" width="100"></td>
+    <td>
+        Name: {{ i.STUDENT.name }}<br>
+        Register No: {{ i.STUDENT.registerno }}<br>
+        Department: {{ i.STUDENT.department }}
+    </td>
+    <td>{{ i.status }}</td>
+    <td>
+        {% if i.status == 'approve' %}
+            <a href="/blockpost/{{ i.id }}" class="btn btn-danger">BLOCK</a>
+        {% else %}
+            <a href="/unblockpost/{{ i.id }}" class="btn btn-success">UNBLOCK</a>
+        {% endif %}
+    </td>
+  </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+{% endblock %}

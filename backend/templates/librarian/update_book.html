@@ -1,0 +1,97 @@
+{% extends 'librarian/new_index.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Update Book</title>
+    <style>
+        body {
+            background-color: #f7f9fc;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .form-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+        }
+        .form-group input[type="file"] {
+            padding: 6px;
+        }
+        .form-group input[type="submit"] {
+            background-color: ##415a77;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            width: 40%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #415a77;
+        }
+    </style>
+</head>
+
+<body>
+
+<form action="/update_book_buttonclick/{{ data.id }}" method="post" enctype="multipart/form-data">
+    <div class="form-container">
+        <div class="form-group">
+            <label for="Book_Name">BOOK NAME</label>
+            <input type="text" name="Book_Name" id="Book_Name" class="form-control" required value="{{ data.name }}" />
+        </div>
+
+        <div class="form-group">
+            <label for="pages">TOTAL PAGES</label>
+            <input type="text" name="pages" id="pages" class="form-control" required value="{{ data.totalpage }}" />
+        </div>
+
+        <div class="form-group">
+            <label for="image">IMAGE</label>
+            <input type="file" name="image" id="image" class="form-control" required value="{{ data.image }}" />
+        </div>
+
+        <div class="form-group">
+            <label for="Author">AUTHOR</label>
+            <input type="text" name="Author" id="Author" class="form-control" required value="{{ data.author }}" />
+        </div>
+
+        <div class="form-group">
+            <label for="price">PRICE</label>
+            <input type="number" name="price" id="price" class="form-control" required value="{{ data.price }}" />
+        </div>
+
+        <div class="form-group">
+            <div align="center">
+                <input type="submit" name="button" id="button" value="UPDATE" />
+            </div>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'admin/new_index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+    <style>
+        .table-hover th{
+            background-color: #415a77;
+            color: white;
+        }
+    </style>
+</head>
+
+<body><table width="570" height="143" border="1" class="table table-hover">
+  <tr>
+      <th width="54" scope="col">Sno </th>
+    <th width="80" height="48" scope="col">STUDENT NAME </th>
+    <th width="54" scope="col">BOOK NAME </th>
+    <th width="105" scope="col">BORROWED DATE </th>
+    <th width="48" scope="col">DUE DATE </th>
+    <th width="74" scope="col">AMOUNT</th>
+    <th width="132" scope="col">EXTRA DAYS </th>
+  </tr>
+    {% for i in view %}
+  <tr>
+    <td>{{ forloop.counter }}&nbsp;</td>
+    <td>{{ i.BOOK_BORROW.STUDENT.name }}&nbsp;</td>
+    <td>{{ i.BOOK_BORROW.BOOK.name }}&nbsp;</td>
+    <td>{{ i.BOOK_BORROW.borrow_date }}&nbsp;</td>
+    <td>{{ i.BOOK_BORROW.due_date }}&nbsp;</td>
+    <td>&nbsp;{{ i.amount }}</td>
+  <td>{{ i.extra_days }}&nbsp;</td>
+  </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+{% endblock %}

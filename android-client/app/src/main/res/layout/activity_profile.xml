@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".profile">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="32dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="677dp">
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/user" />
+
+            <EditText
+                android:id="@+id/nameeeee"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/roundedit"
+                android:drawableStart="@drawable/pen"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="name"
+                android:inputType="textPersonName"
+                android:textColor="#6610f2"
+                android:textColorHint="#6c757d"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+            <EditText
+                android:id="@+id/ageeee"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/roundedit"
+                android:drawableStart="@drawable/pen"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="age"
+                android:inputType="textPersonName"
+                android:textColor="#6610f2"
+                android:textColorHint="#6c757d"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameeeee" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ageeee">
+
+                <RadioButton
+                    android:id="@+id/radioButtonmaleee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/roundedit"
+
+                    android:drawablePadding="20dp"
+                    android:text="Male"
+                    android:textColor="#6610f2"
+                    android:textColorHint="#6c757d" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2female"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/roundedit"
+
+                    android:drawablePadding="20dp"
+                    android:text="Female"
+                    android:textColor="#6610f2"
+                    android:textColorHint="#6c757d" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/ppplll"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/roundedit"
+                android:drawableStart="@drawable/pen"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="place"
+                android:inputType="textPersonName"
+                android:textColor="#6610f2"
+                android:textColorHint="#6c757d"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+            <EditText
+                android:id="@+id/regiiiiii"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/roundedit"
+                android:drawableStart="@drawable/pen"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="reg number"
+                android:inputType="textPersonName"
+                android:textColor="#6610f2"
+                android:textColorHint="#6c757d"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ppplll" />
+
+            <EditText
+                android:id="@+id/depppppaaa"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/roundedit"
+                android:drawableStart="@drawable/pen"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="department"
+                android:inputType="textPersonName"
+                android:textColor="#6610f2"
+                android:textColorHint="#6c757d"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/regiiiiii" />
+
+            <EditText
+                android:id="@+id/poooohhh"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/roundedit"
+                android:drawableStart="@drawable/pen"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="year"
+                android:inputType="textPersonName"
+                android:textColor="#6610f2"
+                android:textColorHint="#6c757d"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/depppppaaa" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName15iooo"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/roundedit"
+                android:drawableStart="@drawable/pen"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="Bio"
+                android:inputType="textPersonName"
+                android:textColor="#6610f2"
+                android:textColorHint="#6c757d"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/poooohhh" />
+
+            <Button
+                android:id="@+id/upttttt"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/round_btn"
+                android:text="Update"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName15iooo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

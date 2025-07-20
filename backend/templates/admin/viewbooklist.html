@@ -1,0 +1,40 @@
+{% extends 'admin/new_index.html' %}
+{% block body %}
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+    <style>
+        .table-hover th{
+            background-color: #415a77;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<table width="548" height="227" border="1" class="table table-hover">
+  <tr>
+    <th width="26" height="87" scope="row">S.NO</th>
+    <th width="26">NAME</th>
+    <th width="26">AUTHOR</th>
+    <th width="26">IMAGE</th>
+    <th width="26">TOTAL PAGE </th>
+      <th width="26">PRICE</th>
+
+  </tr>
+ {% for i in view %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ i.name }}</td>
+    <td>{{ i.author }}</td>
+    <td><img src="{{ i.image }}" height="100" width="100"></td>
+    <td>{{ i.totalpage }}</td>
+    <td>{{ i.price }}</td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

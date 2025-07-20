@@ -1,0 +1,58 @@
+{% extends 'admin/new_index.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Management</title>
+    <style>
+        .table-hover th{
+            background-color: #415a77;
+            color: white;
+        }
+        .table-hover img {
+            border-radius: 50%; /* This makes the image circular */
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+<table class="table table-hover">
+  <tr>
+    <th scope="col">Sno</th>
+    <th scope="col">Name</th>
+    <th scope="col">Age</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Place</th>
+    <th scope="col">Register No</th>
+    <th scope="col">Image</th>
+    <th scope="col">Department</th>
+    <th scope="col">Actions</th>
+  </tr>
+    {% for i in view %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ i.name }}</td>
+    <td>{{ i.age }}</td>
+    <td>{{ i.gender }}</td>
+    <td>{{ i.place }}</td>
+    <td>{{ i.registerno }}</td>
+    <td><img src="{{ i.image }}" alt="Student Image"></td>
+    <td>{{ i.department }}</td>
+    <td>
+        {% if i.LOGIN.usertype == 'student' %}
+            <a href="/block/{{ i.LOGIN.id }}" class="btn btn-danger">BLOCK</a>
+        {% else %}
+            <a href="/unblock/{{ i.LOGIN.id }}" class="btn btn-success">UNBLOCK</a>
+        {% endif %}
+    </td>
+  </tr>
+{% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}
+
