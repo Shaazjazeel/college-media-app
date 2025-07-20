@@ -63,12 +63,3 @@ This project includes two components with separate requirements:
 
 ---
 
-### 🔧 Installation
-
-#### 📦 Clone the repository
-
-```bash
-git clone https://github.com/Shaazjazeel/college-media-app
-cd college-media-app
-
-
